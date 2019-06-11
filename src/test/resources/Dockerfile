@@ -6,6 +6,8 @@
 
 FROM docker.elastic.co/elasticsearch/elasticsearch:6.6.1
 
-RUN mkdir -p /usr/share/elasticsearch/config/certs
+RUN yum install -y openssl
+
 COPY ./elasticsearch.yml /usr/share/elasticsearch/config/elasticsearch.yml
-COPY ./certs /usr/share/elasticsearch/config/certs
+
+ENTRYPOINT ["/usr/share/elasticsearch/config/certs/generate_certificates.sh"]

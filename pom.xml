@@ -335,6 +335,7 @@
                             <watchInterval>500</watchInterval>
                             <logDate>default</logDate>
                             <verbose>true</verbose>
+                            <keepContainer>true</keepContainer>
                             <images>
                                 <image>
                                     <alias>elastic-integration-test</alias>
@@ -354,6 +355,11 @@
                                         <ports>
                                             <port>9200:9200</port>
                                         </ports>
+                                        <volumes>
+                                            <bind>
+                                                <volume>src/test/resources/certs:/usr/share/elasticsearch/config/certs</volume>
+                                            </bind>
+                                        </volumes>
                                         <wait>
                                             <tcp>
                                                 <host>localhost</host>

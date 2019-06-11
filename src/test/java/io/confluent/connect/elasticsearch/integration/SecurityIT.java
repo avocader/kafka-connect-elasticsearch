@@ -76,7 +76,7 @@ public class SecurityIT {
   @Test
   public void testSecureConnection() throws Throwable {
     // TODO: Find a more robust way to get the IP address
-    final String address = "https://172.17.0.1:9200";
+    final String address = "https://172.17.0.2:9200";
 
     connect.kafka().createTopic(KAFKA_TOPIC, 1);
 

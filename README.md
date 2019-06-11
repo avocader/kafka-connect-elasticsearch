@@ -11,6 +11,15 @@ To build a development version you'll need a recent version of Kafka as well as 
 
 You can build kafka-connect-elasticsearch with Maven using the standard lifecycle phases.
 
+# Running integration tests on Mac
+
+There is a known networking issue with Docker on Mac(host machine can't access container by its IP), so you have to route Docker containers to your loopback interface:
+```
+sudo ifconfig lo0 alias 172.17.0.1/24
+sudo ifconfig lo0 alias 172.17.0.2/24
+sudo ifconfig lo0 alias 172.17.0.3/24
+```
+
 # Contribute
 
 - Source Code: https://github.com/confluentinc/kafka-connect-elasticsearch
